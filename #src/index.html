@@ -1,32 +1,11 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 	@@include('_head.html',{ "title":"Luhury Hotels" })
 	<body>
 		<div class="wrapper">
 			@@include('_header.html',{})
 			<main class="page">
-				<section class="luxury">
-					<div class="luxury__content _container">
-						<div class="luxury__text">
-							<h1 class="title">
-								<span>WELCOME TO</span> <br />
-								<span>LUXURY</span> <br />
-								<span>HOTELS</span>
-							</h1>
-							<p class="luxury__label">
-								Book your stay and enjoy Luxury
-								<br />
-								redefined at the most affordable rates.
-							</p>
-						</div>
-						<div class="luxury__btn btn-main">
-							<a class="_icon-home" href="">BOOK NOW</a>
-						</div>
-						<div class="luxury__scroll">
-							<p>Scroll</p>
-						</div>
-					</div>
-				</section>
+				@@include('_startPage.html',{ "background": "style = 'background: linear-gradient(to right, rgba(0, 20, 37, 0.5), rgba(3, 18, 31, 0.5)), url(../img/bg-home.jpg) 50% / cover no-repeat'" })
 				<section class="paradise">
 					<div class="_container">
 						<p class="paradise__breakfast">

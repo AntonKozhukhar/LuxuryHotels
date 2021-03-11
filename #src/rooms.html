@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('_head.html',{ "title":"Rooms" })
+	<body>
+		<div class="wrapper">
+			@@include('_header.html',{})
+			<main class="page">
+				@@include('_startPage.html',{"background": "style = 'background: linear-gradient(to right, rgba(0, 20, 37, 0.5), rgba(3, 18, 31, 0.5)), url(../img/bg-rooms.jpg) 50% / cover no-repeat'"})
+				<section class="rooms">
+					<div class="_container">
+						<h1 class="rooms__title subtitle">ROOMS AND RATES</h1>
+                        <p class="rooms__text">Each of our bright, light-flooded rooms come with everything you could possibly need for a comfortable stay. And yes, comfort isn’t our only objective, we also value good design, sleek contemporary furnishing complemented by the rich tones of nature’s palette as visible from our rooms’ sea-view windows and terraces. </p>
+                        <div class="rooms__column">
+                            <div class="rooms__img">
+                                <img src="img/img-single.jpg" alt="single-room">
+                            </div>
+                            <p class="rooms__label">SINGLE ROOM</p>
+                            <div class="rooms__price">
+                                <p class="rooms__details">VIEW ROOM DETAILS</p>
+                                <div class="rooms__btn btn">
+                                    <a href="">$147  Avg/night</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rooms__column">
+                            <div class="rooms__img">
+                                <img src="img/img-double.jpg" alt="double-room">
+                            </div>
+                            <p class="rooms__label">DOUBLE ROOM</p>
+                            <div class="rooms__price">
+                                <p class="rooms__details">VIEW ROOM DETAILS</p>
+                                <div class="rooms__btn btn">
+                                    <a href="">$155  Avg/night</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rooms__column">
+                            <div class="rooms__img">
+                                <img src="img/img-twin.jpg" alt="twin-room">
+                            </div>
+                            <p class="rooms__label">TWIN ROOM</p>
+                            <div class="rooms__price">
+                                <p class="rooms__details">VIEW ROOM DETAILS</p>
+                                <div class="rooms__btn btn">
+                                    <a href="">$155  Avg/night</a>
+                                </div>
+                            </div>
+                        </div>
+					</div>
+				</section>
+			</main>
+			@@include('_footer.html',{})
+		</div>
+		@@include('_js.html',{})
+	</body>
+</html>

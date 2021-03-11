@@ -1,57 +1,5 @@
 //====================================================================================================
-.luxury {
-    background: linear-gradient(to right, rgba(0, 20, 37, 0.5), rgba(3, 18, 31, 0.5)),
-        url("../img/bg-home.jpg") 50% / cover no-repeat;
-    height: 100vh;
-    &__content {
-        display: flex; 
-        flex-direction: column;
-        min-height: 100%;
-    }
-    &__text {
-        padding: 340px 0 80px 0;
-    }
-    &__label {
-        color: #ffffff;
-        line-height: 30px;
-    }
-    &__btn {
-        flex: 1 1 auto;
-    }
-    &__scroll {
-        font-weight: bold;
-        color: #fff;
-        text-align: center;
-        padding-bottom: 110px;
-        p {
-            display: inline-block;
-            position: relative;
-            &::before {
-                content: "";
-                position: absolute;
-                top: 50px;
-                left: 7px;
-                background: #fff;
-                width: 60px;
-                height: 60px;
-                border-radius: 50%;
-                cursor: pointer;
-            }
-            &::after {
-                content: "";
-                position: absolute;
-                top: 60px;
-                left: 22px;
-                width: 30px;
-                height: 30px;
-                border-left: 10px solid rgb(44, 44, 44);
-                border-top: 10px solid rgb(44, 44, 44);
-                transform: rotate(225deg);
-                cursor: pointer;
-            }
-        }
-    }
-}
+
 
 .paradise {
     &__breakfast {

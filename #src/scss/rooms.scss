@@ -1,0 +1,64 @@
+.rooms {
+    margin-top: 80px;
+    &__title {
+        text-align: center;
+        margin-bottom: 35px;
+    }
+    &__text {
+        text-align: center;
+        margin-bottom: 80px;
+        line-height: 40px;
+    }
+    &__column {
+        border: 2px solid #14274a;
+        border-radius: 0 0 15px 15px;
+        margin-bottom: 80px;
+    }
+    &__img {
+        img {
+            max-width: 100%;
+            min-height: 100%;
+        }
+    }
+    &__label {
+        font-weight: bold;
+        font-size: 60px;
+        color: #ffffff;
+        background: #14274a;
+        text-align: center;
+        padding: 40px 0;
+    }
+    &__price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 80px 160px;
+    }
+    &__details {
+        font-weight: bold;
+        font-size: 25px;
+        position: relative;
+        padding-left: 70px;
+        &::before {
+            content: '+';
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            color: #fff;
+            font-size: 70px;
+            font-weight: 300;
+            top: -50%;
+            left: 0;
+            background: #E0B973;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+        }
+    }
+    &__btn {
+        a {
+            padding: 25px 45px;
+        }
+    }
+}
