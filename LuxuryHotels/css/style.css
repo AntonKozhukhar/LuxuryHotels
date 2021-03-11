@@ -234,6 +234,73 @@ body._lock {
   font-weight: bold;
 }
 
+._input {
+  border: 2px solid #14274a;
+  font-size: 25px;
+  padding: 20px;
+}
+
+._input::-webkit-input-placeholder {
+  color: #14274A;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+._input::-moz-placeholder {
+  color: #14274A;
+  -moz-transition: 0.5s;
+  transition: 0.5s;
+}
+
+._input:-ms-input-placeholder {
+  color: #14274A;
+  -ms-transition: 0.5s;
+  transition: 0.5s;
+}
+
+._input::-ms-input-placeholder {
+  color: #14274A;
+  -ms-transition: 0.5s;
+  transition: 0.5s;
+}
+
+._input::placeholder {
+  color: #14274A;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+._input:focus::-webkit-input-placeholder {
+  -webkit-transform: translateY(-28px);
+          transform: translateY(-28px);
+  font-size: 20px;
+}
+
+._input:focus::-moz-placeholder {
+  transform: translateY(-28px);
+  font-size: 20px;
+}
+
+._input:focus:-ms-input-placeholder {
+  -ms-transform: translateY(-28px);
+      transform: translateY(-28px);
+  font-size: 20px;
+}
+
+._input:focus::-ms-input-placeholder {
+  -ms-transform: translateY(-28px);
+      transform: translateY(-28px);
+  font-size: 20px;
+}
+
+._input:focus::placeholder {
+  -webkit-transform: translateY(-28px);
+      -ms-transform: translateY(-28px);
+          transform: translateY(-28px);
+  font-size: 20px;
+}
+
 .header {
   position: absolute;
   top: 0;
@@ -675,9 +742,66 @@ body._lock {
   margin-bottom: 80px;
 }
 
+.rooms__img {
+  position: relative;
+}
+
 .rooms__img img {
   max-width: 100%;
   min-height: 100%;
+}
+
+.rooms__img span {
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s;
+}
+
+.rooms__img span:nth-child(2) {
+  position: absolute;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  bottom: 30px;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  left: 47%;
+}
+
+.rooms__img span:nth-child(3) {
+  position: absolute;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  bottom: 30px;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  left: 50%;
+}
+
+.rooms__img span:nth-child(4) {
+  position: absolute;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  bottom: 30px;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  left: 53%;
+}
+
+.rooms__img span:hover {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+  background-color: #fff;
 }
 
 .rooms__label {
@@ -734,6 +858,101 @@ body._lock {
 
 .rooms__btn a {
   padding: 25px 45px;
+}
+
+.contact__title {
+  padding: 200px 0 140px 0;
+  font-weight: bold;
+  font-size: 65px;
+  background: #14274A;
+  color: #fff;
+  text-align: center;
+}
+
+.contact__subtitle {
+  margin: 120px 0 15px 0;
+  text-align: center;
+}
+
+.contact__text {
+  font-size: 25px;
+  text-align: center;
+  margin-bottom: 120px;
+}
+
+.contact__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 -30px;
+}
+
+.contact__list {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+  padding: 0 30px;
+}
+
+.contact__list li {
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+
+.contact__forms {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+  padding: 0 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contact__name {
+  margin-bottom: 50px;
+}
+
+.contact__email {
+  margin-bottom: 50px;
+}
+
+.contact__textarea {
+  margin-bottom: 50px;
+  height: 200px;
+}
+
+.contact__textarea:focus::-webkit-input-placeholder {
+  -webkit-transform: translateY(-22px);
+          transform: translateY(-22px);
+}
+
+.contact__textarea:focus::-moz-placeholder {
+  transform: translateY(-22px);
+}
+
+.contact__textarea:focus:-ms-input-placeholder {
+  -ms-transform: translateY(-22px);
+      transform: translateY(-22px);
+}
+
+.contact__textarea:focus::-ms-input-placeholder {
+  -ms-transform: translateY(-22px);
+      transform: translateY(-22px);
+}
+
+.contact__textarea:focus::placeholder {
+  -webkit-transform: translateY(-22px);
+      -ms-transform: translateY(-22px);
+          transform: translateY(-22px);
+}
+
+.contact__btn {
+  text-align: end;
 }
 
 .page {

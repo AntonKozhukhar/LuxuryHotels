@@ -1,0 +1,56 @@
+.contact {
+    &__title {
+        padding: 200px 0 140px 0;
+        font-weight: bold;
+        font-size: 65px;
+        background: #14274A;
+        color: #fff;
+        text-align: center;
+    }
+    &__subtitle {
+        margin: 120px 0 15px 0;
+        text-align: center;
+    }
+    &__text {
+        font-size: 25px;
+        text-align: center;
+        margin-bottom: 120px;
+    }
+    &__row {
+        display: flex;
+        margin: 0 -30px;
+    }
+    &__list {
+        flex: 0 1 50%;
+        padding: 0 30px;
+        li {
+            font-size: 30px;
+            margin-bottom: 40px;
+        }
+    }
+    &__forms {
+        flex: 0 1 50%;
+        padding: 0 30px;
+        display: flex;
+        flex-direction: column;
+        
+    }
+    &__name {
+        margin-bottom: 50px;
+    }
+    &__email {
+        margin-bottom: 50px;
+    }
+    &__textarea {
+        margin-bottom: 50px;
+        height: 200px;
+        &:focus {
+            &::placeholder {
+                transform: translateY(-22px);
+            }
+        }
+    }
+    &__btn {
+        text-align: end;
+    }
+}

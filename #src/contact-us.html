@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('_head.html',{ "title":"Contact-us" })
+	<body>
+		<div class="wrapper">
+			@@include('_header.html',{})
+			<main class="page">
+				<section class="contact">
+                    <h2 class="contact__title">CONTACT-US</h2>
+					<div class="_container">
+						<h3 class="contact__subtitle subtitle">WE ARE HERE FOR YOU</h3>
+						<p class="contact__text">
+							At Luxury Hotels, we take our customers
+							seriously. Do you have any enquiries,
+							compaints or requests, please forward it to
+							our support desk and we will get back to you
+							as soon as possible.
+						</p>
+						<div class="contact__row">
+							<ul class="contact__list">
+								<li>497 Evergreen Rd. Roseville, CA 95673</li>
+								<li>Phone: +44 345 678 903</li>
+								<li>Email: luxury_hotels@gmail.com</li>
+							</ul>
+							<form class="contact__forms" action="">
+								<input
+									class="contact__name _input"
+									type="text"
+									placeholder="Name"
+								/>
+								<input
+									class="contact__email _input"
+									type="text"
+									placeholder="Email Adress"
+								/>
+								<textarea
+									class="contact__textarea _input"
+									placeholder="Message"
+								></textarea>
+								<div class="contact__btn btn">
+									<a href="">Submit</a>
+								</div>
+							</form>
+						</div>
+					</div>
+				</section>
+			</main>
+			@@include('_footer.html',{})
+		</div>
+		@@include('_js.html',{})
+	</body>
+</html>

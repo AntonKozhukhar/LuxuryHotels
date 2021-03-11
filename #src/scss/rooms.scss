@@ -13,11 +13,52 @@
         border: 2px solid #14274a;
         border-radius: 0 0 15px 15px;
         margin-bottom: 80px;
+        
     }
     &__img {
+        position: relative;
+        
         img {
             max-width: 100%;
             min-height: 100%;
+        }
+        span {
+            transition: .3s;
+            &:nth-child(2) {
+                position: absolute;
+                border: 2px solid #fff;
+                border-radius: 50%;
+                width: 20px;
+                height: 20px;
+                bottom: 30px;
+                transform: translateX(-50%);
+                left: 47%;
+            }
+            &:nth-child(3) {
+                position: absolute;
+                border: 2px solid #fff;
+                border-radius: 50%;
+                width: 20px;
+                height: 20px;
+                bottom: 30px;
+                transform: translateX(-50%);
+                left: 50%;
+            }
+            &:nth-child(4) {
+                position: absolute;
+                border: 2px solid #fff;
+                border-radius: 50%;
+                width: 20px;
+                height: 20px;
+                bottom: 30px;
+                transform: translateX(-50%);
+                left: 53%;
+            }
+            &:hover {
+                transition: 0.3s;
+                cursor: pointer;
+                background-color: #fff;
+            }
         }
     }
     &__label {
