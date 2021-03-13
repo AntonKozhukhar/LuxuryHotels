@@ -1,48 +1,73 @@
 .contact {
     &__title {
-        padding: 200px 0 140px 0;
+        padding: 200px 0 80px 0;
         font-weight: bold;
-        font-size: 65px;
+        font-size: 50px;
         background: #14274A;
         color: #fff;
         text-align: center;
+        @media (max-width: $md2+px) {
+            font-size: 35px;
+            padding: 150px 0 50px 0;
+        }
     }
     &__subtitle {
-        margin: 120px 0 15px 0;
+        margin: 80px 0 15px 0;
         text-align: center;
+        @media (max-width: $md2+px) {
+            margin-top: 50px;
+        }
     }
     &__text {
-        font-size: 25px;
         text-align: center;
         margin-bottom: 120px;
+        @media (max-width: $md2+px) {
+            margin-bottom: 50px;
+        }
+        
     }
     &__row {
         display: flex;
-        margin: 0 -30px;
+        margin: 0 -15px;
+        @media (max-width: $md3+px) {
+            flex-direction: column;
+        }
     }
     &__list {
         flex: 0 1 50%;
-        padding: 0 30px;
+        padding: 0 15px;
+        @media (max-width: $md3+px) {
+            order: 2;
+        }
         li {
-            font-size: 30px;
+            font-size: 25px;
             margin-bottom: 40px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            @media (max-width: $md3+px) {
+                text-align: center;
+            }
+            @media (max-width: $md2+px) {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
         }
     }
     &__forms {
         flex: 0 1 50%;
-        padding: 0 30px;
+        padding: 0 15px;
         display: flex;
         flex-direction: column;
-        
     }
     &__name {
-        margin-bottom: 50px;
+        margin-bottom: 40px;
     }
     &__email {
-        margin-bottom: 50px;
+        margin-bottom: 40px;
     }
     &__textarea {
-        margin-bottom: 50px;
+        margin-bottom: 40px;
         height: 200px;
         &:focus {
             &::placeholder {
@@ -52,5 +77,9 @@
     }
     &__btn {
         text-align: end;
+        @media (max-width: $md3+px) {
+            text-align: center;
+            margin-bottom: 40px;
+        }
     }
 }

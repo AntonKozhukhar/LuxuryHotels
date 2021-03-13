@@ -2,10 +2,14 @@
     font-family: AGaramondPro;
     font-style: normal;
     font-weight: bold;
-    font-size: 60px;
+    font-size: 50px;
+    @media (max-width: $md4+px) {
+        font-size: 40px;
+    }
 }
 .btn-main {
     a {
+        font-size: 20px;
         color: #fff;
         border-radius: 15px;
         background: #e0b973;
@@ -15,10 +19,14 @@
         position: relative;
         color: #fff;
         padding: 25px 33px;
-        @media (min-width: 992px) {
+        @media (min-width: $md2+px) {
             &:hover {
                 background: #9c7e44;
             }
+        }
+        @media (max-width: $md4+px) {
+            padding: 20px 25px;
+            font-size: 16px;
         }
     }
 }
@@ -31,7 +39,7 @@
         display: inline-flex;
         color: #fff;
         font-weight: bold;
-        @media (min-width: 992px) {
+        @media (min-width: $md2+px) {
             &:hover {
                 background: #9c7e44;
             }
@@ -42,6 +50,8 @@
     border: 2px solid #14274a;
     font-size: 25px;
     padding: 20px;
+    border-radius: 15px;
+    display: inline-flex;
     &::placeholder {
         color: #14274A;
         transition: 0.5s;

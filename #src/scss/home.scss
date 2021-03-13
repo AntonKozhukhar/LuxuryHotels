@@ -1,12 +1,18 @@
 //====================================================================================================
 
-
 .paradise {
     &__breakfast {
-        font-size: 36px;
+        font-size: 30px;
         line-height: 44px;
         padding: 90px 0;
         text-align: center;
+        @media (max-width: $md3+px) {
+            padding: 60px 0;
+        }
+        @media (max-width: $md4+px) {
+            font-size: 25px;
+            line-height: 30px;
+        }
     }
     &__row {
         display: flex;
@@ -15,11 +21,18 @@
         &:last-child {
             margin-bottom: 0;
         }
+        @media (max-width: $md3+px) {
+            flex-direction: column;
+            text-align: center;
+        }
     }
     &__text {
         flex: 0 0 40%;
         padding: 0 50px;
         position: relative;
+        @media (max-width: $md3+px) {
+            order: 2;
+        }
         &::before {
             content: '';
             position: absolute;

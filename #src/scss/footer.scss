@@ -6,16 +6,14 @@
     &::before {
         content: "";
         position: absolute;
-        top: 0;
+        top: -80px;
         left: 50%;
-        width: 0;
-        height: 0;
-        border-top: 100px solid #14274a;
-        border-right: 100px solid #14274a;
-        transform: rotate(45deg) translateX(-72%);
+        border: 100px solid transparent;
+        border-bottom: 60px solid #14274a;
+        transform: translate(-50%, -50%);
     }
     position: relative;
-    margin-top: 150px;
+    margin-top: 100px;
     background: #14274a;
     color: #fff;
     font-size: 16px;
@@ -27,24 +25,49 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 90px 0 65px 0;
+        padding-top: 90px;
+        padding-bottom: 90px;
+        @media (max-width: $md1+px) {
+			flex-wrap: wrap;
+            text-align: center;
+		}
+        @media (max-width: $md3+px) {
+			justify-content: center;
+            flex-direction: column;
+		}
+        @media (max-width: $md4+px) {
+			padding-top: 50px;
+			padding-bottom: 50px;
+		}
     }
     &__contacts {
         font-size: 14px;
         line-height: 17px;
         font-weight: normal;
-    }
-    &__img {
+        @media (max-width: $md1+px) {
+			flex: 0 1 50%;
+            margin-bottom: 30px;
+		}
     }
     &__item {
-        padding-top: 22px;
+        margin-top: 22px;
     }
     &__list {
+        @media (max-width: $md1+px) {
+			flex: 0 1 50%;
+            margin-bottom: 30px;
+		}
         li {
             margin-bottom: 20px;
         }
     }
     &__socials {
+        @media (max-width: $md1+px) {
+			flex: 0 1 50%;
+		}
+        @media (max-width: $md3+px) {
+			margin-bottom: 30px;
+		}
         li {
             margin-bottom: 15px;
             a {
@@ -52,11 +75,17 @@
             }
         }
     }
+    &__form {
+        @media (max-width: $md1+px) {
+			flex: 0 1 50%;
+		}
+    }
     &__subscribe {
-        padding-bottom: 30px;
+        margin-bottom: 20px;
     }
     &__input {
         position: relative;
+        display: inline-flex;
         &::after {
             content: "OK";
             position: absolute;
@@ -69,11 +98,10 @@
         }
         input {
             background: #14274a;
-            padding: 15px 120px 15px 25px;
+            padding: 15px;
             border: 3px solid #e0b973;
             color: #fff;
             font-size: 16px;
-            font-weight: bold;
             border-radius: 15px;
             &::placeholder {
                 color: #fff;
