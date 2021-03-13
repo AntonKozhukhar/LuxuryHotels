@@ -22,48 +22,24 @@
         font-weight: bold;
         margin-bottom: 20px;
         span {
+            @include adaptive-font(110, 70);
+            letter-spacing: 0.07em;
             &:first-child {
                 font-family: Montserrat;
                 font-weight: normal;
-                font-size: 50px;
-                @media (max-width: $md2+px) {
-                    font-size: 35px;
-                }
-                @media (max-width: $md4+px) {
-                    font-size: 20px;
-                }
-            }
-            &:nth-child(3) {
-                font-size: 140px;
-                letter-spacing: 0.07em;
-                @media (max-width: $md2+px) {
-                    font-size: 100px;
-                }
-                @media (max-width: $md2+px) {
-                    font-size: 70px;
-                }
+                @include adaptive-font(40, 35);
             }
             &:last-child {
                 font-size: 40px;
                 letter-spacing: 0.4em;
-                @media (max-width: $md2+px) {
-                    font-size: 40px;
-                }
-                @media (max-width: $md2+px) {
-                    font-size: 20px;
-                }
+                @include adaptive-font(35, 20);
             }
         }
     }
     &__label {
         color: #ffffff;
         line-height: 30px;
-        @media (max-width: $md2+px) {
-            font-size: 20px;
-        }
-        @media (max-width: $md2+px) {
-            font-size: 18px;
-        }
+        @include adaptive-font(20, 18);
     }
     &__btn {
         flex: 1 1 auto;
@@ -79,7 +55,6 @@
         p {
             display: inline-block;
             position: relative;
-            font-size: 20px;
             &::before {
                 content: "";
                 position: absolute;

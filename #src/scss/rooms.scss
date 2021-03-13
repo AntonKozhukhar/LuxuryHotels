@@ -76,13 +76,12 @@
     }
     &__label {
         font-weight: bold;
-        font-size: 30px;
+        @include adaptive-font(30, 20);
         color: #ffffff;
         background: #14274a;
         text-align: center;
         padding: 30px 0;
         @media (max-width: $md4+px) {
-            font-size: 20px;
             padding: 20px 0;
         }
     }
@@ -91,19 +90,17 @@
         justify-content: space-between;
         align-items: center;
         padding: 20px;
-        
+        @include adaptive-font(20, 12);
         @media (max-width: $md4+px) {
-            font-size: 12px;
             padding: 10px 5px;
         }
     }
     &__details {
         font-weight: bold;
-        font-size: 15px;
+        @include adaptive-font(15, 12);
         position: relative;
         padding-left: 40px;
         @media (max-width: $md4+px) {
-            font-size: 12px;
             padding-left: 30px;
         }
         &::before {

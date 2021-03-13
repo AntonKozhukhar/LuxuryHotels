@@ -4,6 +4,7 @@
 	top: 0;
 	left: 0;
 	width: 100%;
+	font-size: 25px;
 	&__content {
 		display: flex;
 		justify-content: space-between;
@@ -24,9 +25,6 @@
 	}
 	&__list {
 		display: flex;
-		@media (max-width: $md2+px) {
-			font-size: 20px;
-		}
 		@media (max-width: $md3+px) {
 			display: none;
 		}

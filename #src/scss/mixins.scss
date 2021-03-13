@@ -8,3 +8,9 @@
 		font-style: #{$style};
 	}
 }
+
+//Адаптивный шрифт
+@mixin adaptive-font($pcSize, $mobSize) {
+	$addSize: $pcSize - $mobSize;
+		font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+}

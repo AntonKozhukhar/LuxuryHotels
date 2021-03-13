@@ -2,7 +2,7 @@
 
 .paradise {
     &__breakfast {
-        font-size: 30px;
+        @include adaptive-font(30, 25);
         line-height: 44px;
         padding: 90px 0;
         text-align: center;
@@ -10,7 +10,6 @@
             padding: 60px 0;
         }
         @media (max-width: $md4+px) {
-            font-size: 25px;
             line-height: 30px;
         }
     }

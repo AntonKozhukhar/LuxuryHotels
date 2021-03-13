@@ -198,11 +198,10 @@ body {
   font-family: AGaramondPro;
   font-style: normal;
   font-weight: bold;
-  font-size: 50px;
+  font-size: calc(40px + 10 * ((100vw - 320px) / 1180));
 }
 
 .btn-main a {
-  font-size: 20px;
   color: #fff;
   border-radius: 15px;
   background: #e0b973;
@@ -216,6 +215,7 @@ body {
   position: relative;
   color: #fff;
   padding: 25px 33px;
+  font-size: calc(16px + 4 * ((100vw - 320px) / 1180));
 }
 
 .btn a {
@@ -308,6 +308,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
+  font-size: 25px;
 }
 
 .header__content {
@@ -499,25 +500,27 @@ body {
   margin-bottom: 20px;
 }
 
+.luxury__title span {
+  font-size: calc(70px + 40 * ((100vw - 320px) / 1180));
+  letter-spacing: 0.07em;
+}
+
 .luxury__title span:first-child {
   font-family: Montserrat;
   font-weight: normal;
-  font-size: 50px;
-}
-
-.luxury__title span:nth-child(3) {
-  font-size: 140px;
-  letter-spacing: 0.07em;
+  font-size: calc(35px + 5 * ((100vw - 320px) / 1180));
 }
 
 .luxury__title span:last-child {
   font-size: 40px;
   letter-spacing: 0.4em;
+  font-size: calc(20px + 15 * ((100vw - 320px) / 1180));
 }
 
 .luxury__label {
   color: #ffffff;
   line-height: 30px;
+  font-size: calc(18px + 2 * ((100vw - 320px) / 1180));
 }
 
 .luxury__btn {
@@ -536,7 +539,6 @@ body {
 .luxury__scroll p {
   display: inline-block;
   position: relative;
-  font-size: 20px;
 }
 
 .luxury__scroll p::before {
@@ -567,7 +569,7 @@ body {
 }
 
 .paradise__breakfast {
-  font-size: 30px;
+  font-size: calc(25px + 5 * ((100vw - 320px) / 1180));
   line-height: 44px;
   padding: 90px 0;
   text-align: center;
@@ -674,7 +676,7 @@ body {
 }
 
 .facilities__label {
-  font-size: 25px;
+  font-size: calc(20px + 5 * ((100vw - 320px) / 1180));
   line-height: 35px;
   position: absolute;
   bottom: 0;
@@ -790,7 +792,7 @@ body {
 
 .rooms__label {
   font-weight: bold;
-  font-size: 30px;
+  font-size: calc(20px + 10 * ((100vw - 320px) / 1180));
   color: #ffffff;
   background: #14274a;
   text-align: center;
@@ -808,11 +810,12 @@ body {
       -ms-flex-align: center;
           align-items: center;
   padding: 20px;
+  font-size: calc(12px + 8 * ((100vw - 320px) / 1180));
 }
 
 .rooms__details {
   font-weight: bold;
-  font-size: 15px;
+  font-size: calc(12px + 3 * ((100vw - 320px) / 1180));
   position: relative;
   padding-left: 40px;
 }
@@ -847,7 +850,7 @@ body {
 .contact__title {
   padding: 200px 0 80px 0;
   font-weight: bold;
-  font-size: 50px;
+  font-size: calc(35px + 15 * ((100vw - 320px) / 1180));
   background: #14274A;
   color: #fff;
   text-align: center;
@@ -878,7 +881,7 @@ body {
 }
 
 .contact__list li {
-  font-size: 25px;
+  font-size: calc(20px + 5 * ((100vw - 320px) / 1180));
   margin-bottom: 40px;
 }
 
@@ -1008,44 +1011,8 @@ body {
     width: 70%;
   }
 
-  .header__list {
-    font-size: 20px;
-  }
-
   .header__list li {
     margin-right: 35px;
-  }
-
-  .luxury__title span:first-child {
-    font-size: 35px;
-  }
-
-  .luxury__title span:nth-child(3) {
-    font-size: 100px;
-  }
-
-  .luxury__title span:nth-child(3) {
-    font-size: 70px;
-  }
-
-  .luxury__title span:last-child {
-    font-size: 40px;
-  }
-
-  .luxury__title span:last-child {
-    font-size: 20px;
-  }
-
-  .luxury__label {
-    font-size: 20px;
-  }
-
-  .luxury__label {
-    font-size: 18px;
-  }
-
-  .facilities__label {
-    font-size: 20px;
   }
 
   .rooms__column {
@@ -1060,7 +1027,6 @@ body {
   }
 
   .contact__title {
-    font-size: 35px;
     padding: 150px 0 50px 0;
   }
 
@@ -1073,7 +1039,6 @@ body {
   }
 
   .contact__list li {
-    font-size: 20px;
     margin-bottom: 20px;
   }
 }
@@ -1216,13 +1181,8 @@ body {
 }
 
 @media (max-width: 480px) {
-  .subtitle {
-    font-size: 40px;
-  }
-
   .btn-main a {
     padding: 20px 25px;
-    font-size: 16px;
   }
 
   .footer__content {
@@ -1232,10 +1192,6 @@ body {
 
   .luxury__text {
     padding: 120px 0 45px 0;
-  }
-
-  .luxury__title span:first-child {
-    font-size: 20px;
   }
 
   .luxury__scroll {
@@ -1259,22 +1215,18 @@ body {
   }
 
   .paradise__breakfast {
-    font-size: 25px;
     line-height: 30px;
   }
 
   .rooms__label {
-    font-size: 20px;
     padding: 20px 0;
   }
 
   .rooms__price {
-    font-size: 12px;
     padding: 10px 5px;
   }
 
   .rooms__details {
-    font-size: 12px;
     padding-left: 30px;
   }
 
