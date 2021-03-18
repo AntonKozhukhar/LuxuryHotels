@@ -5,6 +5,7 @@
 	left: 0;
 	width: 100%;
 	font-size: 25px;
+	overflow: hidden;
 	&__content {
 		display: flex;
 		justify-content: space-between;
@@ -38,7 +39,7 @@
 			align-items: center;
 			justify-content: center;
 			text-align: center;
-			transition: .5s;
+			transition: 0.5s;
 		}
 		&._active {
 			display: flex;
@@ -86,14 +87,26 @@
 		height: 18px;
 		cursor: pointer;
 		z-index: 2;
+		&::before {
+			content: "";
+			position: absolute;
+			left: 40px;
+			bottom: 40px;
+			width: 100px;
+			height: 100px;
+			border-radius: 40px;
+			background-color: #f7f7f7;
+			transition: 0.5s;
+		}
 		span {
 			transition: all 0.3s ease 0s;
+			transition-delay: .2s;
 			top: calc(50% - 1px);
 			left: 0px;
 			position: absolute;
 			width: 100%;
 			height: 2px;
-			background-color: #f5e0b5;
+			background-color: #9c7e44;
 			border-radius: 2px;
 			&:first-child {
 				top: 0px;
@@ -104,6 +117,10 @@
 			}
 		}
 		&._active {
+			&::before {
+				left: -20px;
+				bottom: -25px;
+			}
 			span {
 				transform: scale(0);
 				&:first-child {

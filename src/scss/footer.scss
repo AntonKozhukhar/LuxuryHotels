@@ -6,7 +6,7 @@
     &::before {
         content: "";
         position: absolute;
-        top: -80px;
+        top: -75px;
         left: 50%;
         border: 100px solid transparent;
         border-bottom: 60px solid #14274a;
@@ -86,15 +86,24 @@
     &__input {
         position: relative;
         display: inline-flex;
+        @media (min-width: $md2+px) {
+            
+        }
         &::after {
+            transition: .5s;
             content: "OK";
             position: absolute;
-            background-color: #e0b973;
+            background: #e0b973;
             color: #14274a;
-            padding: 20px;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 15px;
             top: 0;
             right: 0;
             border-radius: 0 15px 15px 0;
+            cursor: pointer;
         }
         input {
             background: #14274a;
@@ -103,10 +112,21 @@
             color: #fff;
             font-size: 16px;
             border-radius: 15px;
+            transition: .5s;
+            @media (min-width: $md2+px) {
+                &:focus {
+                    border: 3px solid #9c7e44;
+                }
+            }
             &::placeholder {
                 color: #fff;
                 font-size: 16px;
                 font-weight: bold;
+            }
+        }
+        &:hover::after {
+            @media (min-width: $md2+px) {
+                background: #9c7e44;
             }
         }
     }
