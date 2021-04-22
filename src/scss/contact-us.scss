@@ -51,17 +51,26 @@
             }
         }
     }
-    &__forms {
+    &__form {
         flex: 0 1 50%;
         padding: 0 15px;
-        display: flex;
-        flex-direction: column;
+        position: relative;
+        text-align: end;
     }
     &__name {
         margin-bottom: 40px;
+        
     }
     &__email {
         margin-bottom: 40px;
+    }
+    &__message {
+      color: red;
+      font-size: 22px;
+      position: absolute;
+      top: 195px;
+      left: 35px;
+      display: none;
     }
     &__textarea {
         margin-bottom: 40px;
@@ -73,7 +82,6 @@
         }
     }
     &__btn {
-        text-align: end;
         @media (max-width: $md3+px) {
             text-align: center;
             margin-bottom: 40px;

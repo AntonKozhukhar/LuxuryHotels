@@ -218,18 +218,16 @@ body {
   font-size: calc(16px + 4 * ((100vw - 320px) / 1180));
 }
 
-.btn a {
+.btn {
   padding: 20px 65px;
   background: #e0b973;
   border-radius: 15px;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
   color: #fff;
   font-weight: bold;
+  font-size: 20px;
 }
 
 ._input {
@@ -237,9 +235,7 @@ body {
   font-size: 25px;
   padding: 20px;
   border-radius: 15px;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  width: 100%;
 }
 
 ._input::-webkit-input-placeholder {
@@ -273,6 +269,11 @@ body {
   transition: 0.5s;
 }
 
+._input:focus {
+  -webkit-box-shadow: 0 0 15px #9c7e44;
+          box-shadow: 0 0 15px #9c7e44;
+}
+
 ._input:focus::-webkit-input-placeholder {
   -webkit-transform: translateY(-28px);
           transform: translateY(-28px);
@@ -301,6 +302,11 @@ body {
       -ms-transform: translateY(-28px);
           transform: translateY(-28px);
   font-size: 20px;
+}
+
+._input._error {
+  -webkit-box-shadow: 0 0 15px red;
+          box-shadow: 0 0 15px red;
 }
 
 .slider-prev {
@@ -510,78 +516,69 @@ body {
   margin-bottom: 20px;
 }
 
-.footer__input {
+.footer form {
   position: relative;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  border-radius: 15px;
 }
 
-.footer__input::after {
-  -webkit-transition: .5s;
-  -o-transition: .5s;
-  transition: .5s;
-  content: "OK";
-  position: absolute;
-  background: #e0b973;
-  color: #14274a;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 0 15px;
-  top: 0;
-  right: 0;
-  border-radius: 0 15px 15px 0;
-  cursor: pointer;
+.footer form._error {
+  -webkit-box-shadow: 0 0 15px red;
+          box-shadow: 0 0 15px red;
 }
 
-.footer__input input {
+.footer form input {
   background: #14274a;
   padding: 15px;
   border: 3px solid #e0b973;
   color: #fff;
   font-size: 16px;
-  border-radius: 15px;
-  -webkit-transition: .5s;
-  -o-transition: .5s;
-  transition: .5s;
+  border-radius: 15px 0 0 15px;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
 }
 
-.footer__input input::-webkit-input-placeholder {
+.footer form input::-webkit-input-placeholder {
   color: #fff;
   font-size: 16px;
   font-weight: bold;
 }
 
-.footer__input input::-moz-placeholder {
+.footer form input::-moz-placeholder {
   color: #fff;
   font-size: 16px;
   font-weight: bold;
 }
 
-.footer__input input:-ms-input-placeholder {
+.footer form input:-ms-input-placeholder {
   color: #fff;
   font-size: 16px;
   font-weight: bold;
 }
 
-.footer__input input::-ms-input-placeholder {
+.footer form input::-ms-input-placeholder {
   color: #fff;
   font-size: 16px;
   font-weight: bold;
 }
 
-.footer__input input::placeholder {
+.footer form input::placeholder {
   color: #fff;
   font-size: 16px;
   font-weight: bold;
+}
+
+.footer__btn {
+  background: #e0b973;
+  color: #14274a;
+  padding: 0 15px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 0 15px 15px 0;
+  cursor: pointer;
 }
 
 .luxury__content {
@@ -961,18 +958,13 @@ body {
   margin-bottom: 0;
 }
 
-.contact__forms {
+.contact__form {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 50%;
           flex: 0 1 50%;
   padding: 0 15px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  position: relative;
+  text-align: end;
 }
 
 .contact__name {
@@ -981,6 +973,15 @@ body {
 
 .contact__email {
   margin-bottom: 40px;
+}
+
+.contact__message {
+  color: red;
+  font-size: 22px;
+  position: absolute;
+  top: 195px;
+  left: 35px;
+  display: none;
 }
 
 .contact__textarea {
@@ -1013,10 +1014,6 @@ body {
           transform: translateY(-22px);
 }
 
-.contact__btn {
-  text-align: end;
-}
-
 .page {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
@@ -1028,7 +1025,7 @@ body {
     background: #9c7e44;
   }
 
-  .btn a:hover {
+  .btn:hover {
     background: #9c7e44;
   }
 
@@ -1043,12 +1040,9 @@ body {
     text-decoration: underline;
   }
 
-  .footer__input input:focus {
-    border: 3px solid #9c7e44;
-  }
-
-  .footer__input:hover::after {
-    background: #9c7e44;
+  .header__link._active {
+    font-weight: bold;
+    text-decoration: underline;
   }
 }
 

@@ -70,6 +70,10 @@
 				font-weight: bold;
 				text-decoration: underline;
 			}
+      &._active {
+        font-weight: bold;
+				text-decoration: underline;
+      }
 		}
 	}
 }
