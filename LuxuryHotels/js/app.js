@@ -24,7 +24,7 @@ burger.addEventListener('click', function () {
 
 //Srcoll
 if (
-	location.pathname.includes('/home.html') ||
+	location.pathname.includes('/index.html') ||
 	location.pathname.includes('/facilities.html') ||
 	location.pathname.includes('/rooms.html')
 ) {
@@ -43,7 +43,6 @@ if (
 		}
 	});
 }
-
 //Slider
 new Swiper('.rooms__slider', {
 	navigation: {
@@ -75,6 +74,23 @@ for (let i = 0; i < view.length; i++) {
 
 
 //Validation
+const form = document.forms.form;
+const formReq = document.querySelectorAll('._input');
+
+isInputsEmpty(formReq);
+
+function isInputsEmpty(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    arr[i].addEventListener("blur", function () {
+      if (arr[i].value != '') {
+        arr[i].classList.add('_active');
+      } else {
+        arr[i].classList.remove('_active');
+      }
+    });
+  }
+}
+
 const regEmail = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;
 
 const footerForm = document.forms.footerForm;
@@ -97,7 +113,7 @@ footerForm.addEventListener('submit', function (e) {
 	}
 });
 
-const form = document.forms.form;
+
 if (location.pathname.includes('/contact-us.html')) {
 	form.addEventListener('submit', formSend);
 
@@ -107,7 +123,6 @@ if (location.pathname.includes('/contact-us.html')) {
 	}
 }
 function formValidate() {
-	const formReq = document.querySelectorAll('._input');
   const errorMessages = document.querySelectorAll('.contact__message');
 
 	for (let i = 0; i < formReq.length; i++) {

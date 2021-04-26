@@ -56,6 +56,23 @@
     padding: 0 15px;
     position: relative;
     text-align: end;
+    label {
+      color: #14274a;
+      transition: 0.5s;
+      font-size: 25px;
+      position: absolute;
+      left: 37px;
+      cursor: text;
+      &:nth-of-type(1) {
+        top: 25px;
+      }
+      &:nth-of-type(2) {
+        top: 140px;
+      }
+      &:nth-of-type(3) {
+        top: 254px;
+      }
+    }
   }
   &__name {
     margin-bottom: 40px;
@@ -77,7 +94,7 @@
     }
     &:nth-of-type(3) {
       bottom: 80px;
-      @media (max-width:$md3+px){
+      @media (max-width: $md3+px) {
         bottom: 120px;
       }
     }

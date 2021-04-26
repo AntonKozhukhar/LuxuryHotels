@@ -46,19 +46,21 @@
   padding: 20px;
   border-radius: 15px;
   width: 100%;
-  &::placeholder {
-    color: #14274a;
-    transition: 0.5s;
-  }
   &:focus {
     box-shadow: 0 0 15px #9c7e44;
-    &::placeholder {
-      transform: translateY(-28px);
+    & + label {
+      transform: translateY(-24px);
       font-size: 20px;
     }
   }
   &._error {
     box-shadow: 0 0 15px red;
+  }
+  &._active {
+    & + label {
+      transform: translateY(-24px);
+      font-size: 20px;
+    }
   }
 }
 .slider-prev {

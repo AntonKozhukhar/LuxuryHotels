@@ -25,11 +25,13 @@
       transition: .3s;
       padding-right: 30px;
     }
-    &:hover {
-      color: #e0b973;
-    }
-    &:hover::before {
-      color: #e0b973;
+    @media (min-width:$md2+px){
+      &:hover {
+        color: #e0b973;
+      }
+      &:hover::before {
+        color: #e0b973;
+      }
     }
   }
   &__content {
@@ -131,8 +133,10 @@
     border-radius: 0 15px 15px 0;
     cursor: pointer;
     transition: .3s;
-    &:hover {
-      background: #9c7e44;
+    @media (min-width:$md2+px){
+      &:hover {
+        background: #9c7e44;
+      }
     }
   }
 }
