@@ -55,6 +55,9 @@
         a {
             position: relative;
             color: #fff;
+            &:active::before {
+              background: rgb(211, 210, 210);
+            }
             &::before {
                 content: "";
                 position: absolute;

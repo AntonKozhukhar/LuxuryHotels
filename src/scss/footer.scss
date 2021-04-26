@@ -20,6 +20,17 @@
   font-weight: bold;
   a {
     color: #fff;
+    transition: .3s;
+    &::before{
+      transition: .3s;
+      padding-right: 30px;
+    }
+    &:hover {
+      color: #e0b973;
+    }
+    &:hover::before {
+      color: #e0b973;
+    }
   }
   &__content {
     display: flex;
@@ -87,6 +98,7 @@
     position: relative;
     display: inline-flex;
     border-radius: 15px;
+    position: relative;
     &._error {
       box-shadow: 0 0 15px red;
     }
@@ -94,14 +106,19 @@
       background: #14274a;
       padding: 15px;
       border: 3px solid #e0b973;
+      border-right: none;
       color: #fff;
       font-size: 16px;
       border-radius: 15px 0 0 15px;
-      transition: 0.5s;
+      transition: .3s;
       &::placeholder {
         color: #fff;
         font-size: 16px;
         font-weight: bold;
+      }
+      &:focus {
+        border: 3px solid #9c7e44;
+        border-right: none;
       }
     }
   }
@@ -113,6 +130,10 @@
     font-weight: bold;
     border-radius: 0 15px 15px 0;
     cursor: pointer;
+    transition: .3s;
+    &:hover {
+      background: #9c7e44;
+    }
   }
 }
 

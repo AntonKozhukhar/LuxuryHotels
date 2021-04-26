@@ -36,15 +36,6 @@
         border: 2px solid #14274a;
         border-radius: 0 0 15px 15px;
     }
-    &__slider {
-      
-    }
-    &__wrapper {
-    }
-    
-    &__slide {
-    }
-    
     &__image {
         position: relative;
         padding-bottom: 70%;
@@ -58,12 +49,6 @@
             top: 0;
             left: 0;
         }
-    }
-    &__btn-prev {
-        
-    }
-    &__btn-next {
-
     }
     &__label {
         font-weight: bold;
@@ -81,6 +66,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 20px;
+        position: relative;
         @include adaptive-font(20, 12);
         @media (max-width: $md4+px) {
             padding: 10px 5px;
@@ -88,11 +74,12 @@
     }
     &__details {
         font-weight: bold;
+        cursor: pointer;
         @include adaptive-font(15, 12);
         position: relative;
         padding-left: 40px;
         @media (max-width: $md4+px) {
-            padding-left: 30px;
+          padding-left: 30px;
         }
         &::before {
             content: "+";
@@ -114,15 +101,70 @@
                 width: 25px;
                 height: 25px;
             }
-        }
-    }
-    &__btn {
-        a {
-            padding: 20px;
-            @media (max-width: $md4+px) {
-                padding: 10px;
-                border-radius: 10px;
+            @media (max-width:$md4 - 146+px){
+              top: -3px;
             }
         }
+        &._active {
+          &::before {
+            content: "";
+          }
+          &::after {
+            content: '';
+            position: absolute;
+            background-color: #fff;
+            width: 18px;
+            height: 3px;
+            top: 6px;
+            left: 6px;
+            cursor: pointer;
+            @media (max-width:$md4+px){
+              top: 3px;
+              left: 5px;
+              width: 15px;
+            }
+            @media (max-width:$md4 - 146+px){
+              top: 8px;
+            }
+          }
+        }
+    }
+    &__details-list {
+      position: absolute;
+      top: 75px;
+      left: 45px;
+      background: #f7f7f7;
+      border: 1px solid #14274a;
+      z-index: 2;
+      display: none;
+      @media (max-width:$md4+px){
+        top: 50px;
+        left: 30px;
+      }
+      @media (max-width:$md4 - 146+px){
+        top: 55px;
+      }
+      li {
+        padding: 15px;
+        cursor: pointer;
+        @media (min-width:$md2+px){
+          &:hover {
+            background: #d3cfca;
+          }
+        }
+        &:nth-child(2n) {
+          background:#ebe0ce;
+        }
+      }
+      &._active {
+        display: block;
+      }
+    }
+    &__btn {
+      padding: 20px;
+      @media (max-width: $md4+px) {
+        padding: 10px;
+        border-radius: 10px;
+      }
     }
 }

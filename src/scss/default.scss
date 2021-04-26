@@ -33,7 +33,7 @@
   transition: 0.5s;
   color: #fff;
   font-weight: bold;
-  font-size: 20px;
+  @include adaptive-font(20, 15);
   @media (min-width: $md2+px) {
     &:hover {
       background: #9c7e44;
@@ -121,10 +121,30 @@
 }
 .swiper-pagination {
   padding-bottom: 15px;
+  @media (max-width:$md4+px){
+    padding-bottom: 10px;
+  }
   &-bullet {
     width: 15px;
     height: 15px;
     background-color: #fff;
     border: 1px solid #fff;
+    @media (max-width:$md4+px){
+      width: 12px;
+      height: 12px;
+    }
   }
 }
+
+.error-message {
+    color: red;
+    font-size: 18px;
+    position: absolute;
+    top: 60px;
+    left: 18px;
+    font-weight: normal;
+    display: none;
+    &._active {
+      display: block;
+    }
+  }

@@ -1,90 +1,103 @@
 .contact {
-    &__title {
-        padding: 200px 0 80px 0;
-        font-weight: bold;
-        @include adaptive-font(50, 35);
-        background: #14274A;
-        color: #fff;
+  &__title {
+    padding: 200px 0 80px 0;
+    font-weight: bold;
+    @include adaptive-font(50, 35);
+    background: #14274a;
+    color: #fff;
+    text-align: center;
+    @media (max-width: $md2+px) {
+      padding: 150px 0 50px 0;
+    }
+  }
+  &__subtitle {
+    margin: 80px 0 15px 0;
+    text-align: center;
+    @media (max-width: $md2+px) {
+      margin-top: 50px;
+    }
+  }
+  &__text {
+    text-align: center;
+    margin-bottom: 120px;
+    @media (max-width: $md2+px) {
+      margin-bottom: 50px;
+    }
+  }
+  &__row {
+    display: flex;
+    margin: 0 -15px;
+    @media (max-width: $md3+px) {
+      flex-direction: column;
+    }
+  }
+  &__list {
+    flex: 0 1 50%;
+    padding: 0 15px;
+    @media (max-width: $md3+px) {
+      order: 2;
+    }
+    li {
+      @include adaptive-font(25, 20);
+      margin-bottom: 40px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      @media (max-width: $md3+px) {
         text-align: center;
-        @media (max-width: $md2+px) {
-            padding: 150px 0 50px 0;
-        }
+      }
+      @media (max-width: $md2+px) {
+        margin-bottom: 20px;
+      }
     }
-    &__subtitle {
-        margin: 80px 0 15px 0;
-        text-align: center;
-        @media (max-width: $md2+px) {
-            margin-top: 50px;
-        }
+  }
+  &__form {
+    flex: 0 1 50%;
+    padding: 0 15px;
+    position: relative;
+    text-align: end;
+  }
+  &__name {
+    margin-bottom: 40px;
+  }
+  &__email {
+    margin-bottom: 40px;
+  }
+  &__message {
+    color: red;
+    font-size: 20px;
+    position: absolute;
+    left: 35px;
+    display: none;
+    &:nth-of-type(1) {
+      top: 80px;
     }
-    &__text {
-        text-align: center;
-        margin-bottom: 120px;
-        @media (max-width: $md2+px) {
-            margin-bottom: 50px;
-        }
-    }
-    &__row {
-        display: flex;
-        margin: 0 -15px;
-        @media (max-width: $md3+px) {
-            flex-direction: column;
-        }
-    }
-    &__list {
-        flex: 0 1 50%;
-        padding: 0 15px;
-        @media (max-width: $md3+px) {
-            order: 2;
-        }
-        li {
-            @include adaptive-font(25, 20);
-            margin-bottom: 40px;
-            &:last-child {
-                margin-bottom: 0;
-            }
-            @media (max-width: $md3+px) {
-                text-align: center;
-            }
-            @media (max-width: $md2+px) {
-                margin-bottom: 20px;
-            }
-        }
-    }
-    &__form {
-        flex: 0 1 50%;
-        padding: 0 15px;
-        position: relative;
-        text-align: end;
-    }
-    &__name {
-        margin-bottom: 40px;
-        
-    }
-    &__email {
-        margin-bottom: 40px;
-    }
-    &__message {
-      color: red;
-      font-size: 22px;
-      position: absolute;
+    &:nth-of-type(2) {
       top: 195px;
-      left: 35px;
-      display: none;
     }
-    &__textarea {
-        margin-bottom: 40px;
-        height: 200px;
-        &:focus {
-            &::placeholder {
-                transform: translateY(-22px);
-            }
-        }
+    &:nth-of-type(3) {
+      bottom: 80px;
+      @media (max-width:$md3+px){
+        bottom: 120px;
+      }
     }
-    &__btn {
-        @media (max-width: $md3+px) {
-            text-align: center;
-            margin-bottom: 40px;
-        }
+    &._active {
+      display: block;
     }
+  }
+  &__textarea {
+    margin-bottom: 40px;
+    height: 200px;
+    &:focus {
+      &::placeholder {
+        transform: translateY(-22px);
+      }
+    }
+  }
+  &__btn {
+    @media (max-width: $md3+px) {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+  }
 }
