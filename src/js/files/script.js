@@ -62,16 +62,34 @@ new Swiper('.rooms__slider', {
 });
 
 //Dropdown
-const view = document.querySelectorAll('.rooms__details');
-const dropdown = document.querySelectorAll('.rooms__details-list');
 
-for (let i = 0; i < view.length; i++) {
-  view[i].addEventListener("click", function() {
-    view[i].classList.toggle('_active');
-    dropdown[i].classList.toggle('_active');
+const details = document.querySelectorAll('.rooms__details');
+const dropdowns = document.querySelectorAll('.rooms__details-list');
+
+for (let i = 0; i < details.length; i++) {
+	const btn = details[i];
+	const dropdown = dropdowns[i];
+
+  btn.addEventListener('click', function() {
+    btn.classList.toggle('_active');
+    dropdown.classList.toggle('_active');
   });
+
+	if (isActive(btn)) {
+		window.addEventListener('click', removeDropdown(btn, dropdown));
+	}
 }
 
+function removeDropdown(element1, element2) {
+  removeActive(element1);
+  removeActive(element2);
+}
+function isActive(element) {
+	return element.classList.contains('_active');
+}
+function removeActive(element) {
+	element.classList.remove('_active');
+}
 
 //Validation
 const form = document.forms.form;
@@ -80,39 +98,40 @@ const formReq = document.querySelectorAll('._input');
 isInputsEmpty(formReq);
 
 function isInputsEmpty(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    arr[i].addEventListener("blur", function () {
-      if (arr[i].value != '') {
-        arr[i].classList.add('_active');
-      } else {
-        arr[i].classList.remove('_active');
-      }
-    });
-  }
+	for (let i = 0; i < arr.length; i++) {
+		arr[i].addEventListener('blur', function () {
+			if (arr[i].value != '') {
+				arr[i].classList.add('_active');
+			} else {
+				arr[i].classList.remove('_active');
+			}
+		});
+	}
 }
 
 const regEmail = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;
 
 const footerForm = document.forms.footerForm;
 const footerInput = footerForm.elements.footerInput;
-const footerErrorMessage = document.querySelector('.error-message');
-
+const footerErrors = document.querySelectorAll('.error-message');
 
 footerForm.addEventListener('submit', function (e) {
 	e.preventDefault();
-  formRemoveError(footerForm);
-  removeErrorMessage(footerErrorMessage)
+	formRemoveError(footerForm);
 
-	if (emailTest(footerInput)) {
-    formAddError(footerForm);
-    addErrorMessage(footerErrorMessage)
-	}
-	if (footerInput.value === '') {
-    formAddError(footerForm);
-    addErrorMessage(footerErrorMessage)
+	for (let i = 0; i < footerErrors.length; i++) {
+		removeErrorMessage(footerErrors[i]);
+		if (footerInput.value != '') {
+			if (emailTest(footerInput)) {
+				formAddError(footerForm);
+				addErrorMessage(footerErrors[1]);
+			}
+		} else {
+			formAddError(footerForm);
+			addErrorMessage(footerErrors[0]);
+		}
 	}
 });
-
 
 if (location.pathname.includes('/contact-us.html')) {
 	form.addEventListener('submit', formSend);
@@ -123,24 +142,27 @@ if (location.pathname.includes('/contact-us.html')) {
 	}
 }
 function formValidate() {
-  const errorMessages = document.querySelectorAll('.contact__message');
+	const errorMessages = document.querySelectorAll('._message');
+	const errorEmail = document.querySelector('._message-email');
+
+	removeErrorMessage(errorEmail);
 
 	for (let i = 0; i < formReq.length; i++) {
 		const input = formReq[i];
-    const message = errorMessages[i];
+		const message = errorMessages[i];
 
 		formRemoveError(input);
-    removeErrorMessage(message);
+		removeErrorMessage(message);
 
-		if (input.name === 'email') {
+		if (input.name === 'email' && input.value != '') {
 			if (emailTest(input)) {
-        formAddError(input);
-        addErrorMessage(message);
+				formAddError(input);
+				addErrorMessage(errorEmail);
 			}
-    } else {
+		} else {
 			if (input.value === '') {
-        formAddError(input);
-        addErrorMessage(message)
+				formAddError(input);
+				addErrorMessage(message);
 			}
 		}
 	}
@@ -156,8 +178,8 @@ function emailTest(input) {
 }
 
 function addErrorMessage(message) {
-  message.classList.add('_active');
+	message.classList.add('_active');
 }
 function removeErrorMessage(message) {
-  message.classList.remove('_active');
+	message.classList.remove('_active');
 }

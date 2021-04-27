@@ -54,23 +54,22 @@
   &__form {
     flex: 0 1 50%;
     padding: 0 15px;
-    position: relative;
     text-align: end;
+  }
+  &__form-wrap {
+    position: relative;
     label {
       color: #14274a;
       transition: 0.5s;
       font-size: 25px;
       position: absolute;
-      left: 37px;
+      left: 30px;
       cursor: text;
-      &:nth-of-type(1) {
-        top: 25px;
-      }
-      &:nth-of-type(2) {
-        top: 140px;
-      }
-      &:nth-of-type(3) {
-        top: 254px;
+      top: 25px;
+    }
+    &:nth-of-type(3){
+      span {
+        top: 208px;
       }
     }
   }
@@ -84,24 +83,14 @@
     color: red;
     font-size: 20px;
     position: absolute;
-    left: 35px;
+    left: 30px;
     display: none;
-    &:nth-of-type(1) {
-      top: 80px;
-    }
-    &:nth-of-type(2) {
-      top: 195px;
-    }
-    &:nth-of-type(3) {
-      bottom: 80px;
-      @media (max-width: $md3+px) {
-        bottom: 120px;
-      }
-    }
+    top: 80px;
     &._active {
       display: block;
     }
   }
+  
   &__textarea {
     margin-bottom: 40px;
     height: 200px;

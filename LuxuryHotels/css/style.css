@@ -692,7 +692,7 @@ body {
 }
 
 .paradise__text::before {
-  content: '';
+  content: "";
   position: absolute;
   border-left: 2px solid #14274a;
   top: 15px;
@@ -992,31 +992,27 @@ body {
       -ms-flex: 0 1 50%;
           flex: 0 1 50%;
   padding: 0 15px;
-  position: relative;
   text-align: end;
 }
 
-.contact__form label {
+.contact__form-wrap {
+  position: relative;
+}
+
+.contact__form-wrap label {
   color: #14274a;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
   font-size: 25px;
   position: absolute;
-  left: 37px;
+  left: 30px;
   cursor: text;
-}
-
-.contact__form label:nth-of-type(1) {
   top: 25px;
 }
 
-.contact__form label:nth-of-type(2) {
-  top: 140px;
-}
-
-.contact__form label:nth-of-type(3) {
-  top: 254px;
+.contact__form-wrap:nth-of-type(3) span {
+  top: 208px;
 }
 
 .contact__name {
@@ -1031,20 +1027,9 @@ body {
   color: red;
   font-size: 20px;
   position: absolute;
-  left: 35px;
+  left: 30px;
   display: none;
-}
-
-.contact__message:nth-of-type(1) {
   top: 80px;
-}
-
-.contact__message:nth-of-type(2) {
-  top: 195px;
-}
-
-.contact__message:nth-of-type(3) {
-  bottom: 80px;
 }
 
 .contact__message._active {
@@ -1168,6 +1153,10 @@ body {
 
   .header__list li {
     margin-right: 35px;
+  }
+
+  .paradise__img {
+    margin-bottom: 15px;
   }
 
   .rooms__column {
@@ -1375,10 +1364,6 @@ body {
 
   .contact__list li {
     text-align: center;
-  }
-
-  .contact__message:nth-of-type(3) {
-    bottom: 120px;
   }
 
   .contact__btn {
