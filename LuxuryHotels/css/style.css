@@ -1071,6 +1071,7 @@ body {
 .contact__textarea {
   margin-bottom: 40px;
   height: 200px;
+  resize: none;
 }
 
 .contact__textarea:focus::-webkit-input-placeholder {
@@ -1104,7 +1105,7 @@ body {
           flex: 1 1 auto;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .btn-main a:hover {
     background: #b6985d;
   }
@@ -1126,7 +1127,9 @@ body {
   .header__link._active {
     text-decoration: underline;
   }
+}
 
+@media (min-width: 992px) {
   .footer a:hover {
     color: #e0b973;
   }
@@ -1192,8 +1195,12 @@ body {
 }
 
 @media (max-width: 992px) {
+  .header__logo {
+    width: 170px;
+  }
+
   .header__logo img {
-    width: 70%;
+    width: 100%;
   }
 
   .header__list li {

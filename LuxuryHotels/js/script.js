@@ -1,3 +1,20 @@
+//Webp
+
+function testWebP(callback) {
+	var webP = new Image();
+	webP.onload = webP.onerror = function () {
+		callback(webP.height == 2);
+	};
+	webP.src ='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
+}
+testWebP(function (support) {
+	if (support == true) {
+		document.querySelector('body').classList.add('_webp');
+	} else {
+		document.querySelector('body').classList.add('_no-webp');
+	}
+});
+
 //Active menu
 let menuLinks = document.querySelectorAll('.header__link');
 
@@ -12,7 +29,7 @@ let burger = document.querySelector('.header__burger');
 let menu = document.querySelector('.header__list');
 
 burger.addEventListener('click', function (e) {
-  e.stopPropagation();
+	e.stopPropagation();
 	let active = burger.classList.toggle('_active');
 	if (active) {
 		document.body.style.overflow = 'hidden';
@@ -44,6 +61,7 @@ if (
 		}
 	});
 }
+
 //Slider
 new Swiper('.rooms__slider', {
 	navigation: {
@@ -63,7 +81,6 @@ new Swiper('.rooms__slider', {
 });
 
 //Dropdown
-
 const details = document.querySelectorAll('.rooms__details');
 const dropdowns = document.querySelectorAll('.rooms__details-list');
 
@@ -71,29 +88,29 @@ for (let i = 0; i < details.length; i++) {
 	const btn = details[i];
 	const dropdown = dropdowns[i];
 
-  btn.addEventListener('click', function() {
-    btn.classList.toggle('_show');
-    dropdown.classList.toggle('_show');
-  });
+	btn.addEventListener('click', function () {
+		btn.classList.toggle('_show');
+		dropdown.classList.toggle('_show');
+	});
 
 	if (isActive(btn)) {
 		window.addEventListener('click', removeDropdown(btn, dropdown));
 	}
 }
 if (location.pathname.includes('/rooms.html')) {
-  document.addEventListener("click", function (e) {
-    const activeButtons = document.querySelectorAll('._show');
-    if(!e.target.classList.contains('rooms__details')) {
-      for (let i = 0; i < activeButtons.length; i++) {
-        removeActive(activeButtons[i]);
-      }
-    }
-  });
+	document.addEventListener('click', function (e) {
+		const activeButtons = document.querySelectorAll('._show');
+		if (!e.target.classList.contains('rooms__details')) {
+			for (let i = 0; i < activeButtons.length; i++) {
+				removeActive(activeButtons[i]);
+			}
+		}
+	});
 }
 
 function removeDropdown(element1, element2) {
-  removeActive(element1);
-  removeActive(element2);
+	removeActive(element1);
+	removeActive(element2);
 }
 function isActive(element) {
 	return element.classList.contains('_show');
@@ -109,9 +126,9 @@ const formReq = document.querySelectorAll('._input');
 isInputsEmpty(formReq);
 
 function isInputsEmpty(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    const input = arr[i];
-    input.addEventListener('blur', function () {
+	for (let i = 0; i < arr.length; i++) {
+		const input = arr[i];
+		input.addEventListener('blur', function () {
 			if (input.value != '') {
 				input.classList.add('_active');
 			} else {

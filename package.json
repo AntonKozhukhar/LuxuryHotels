@@ -26,6 +26,7 @@
 		"gulp-webpcss": "latest",
 		"imagemin-webp": "latest",
 		"transform-runtime": "0.0.0",
+		"uglify-js": "github:mishoo/UglifyJS2#harmony",
 		"webp-converter": "2.2.3"
 	}
 }

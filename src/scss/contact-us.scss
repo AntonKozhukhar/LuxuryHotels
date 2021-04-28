@@ -94,6 +94,7 @@
   &__textarea {
     margin-bottom: 40px;
     height: 200px;
+    resize: none;
     &:focus {
       &::placeholder {
         transform: translateY(-22px);

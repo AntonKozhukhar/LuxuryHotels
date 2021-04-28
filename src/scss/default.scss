@@ -24,7 +24,7 @@
       left: 2px;
       box-shadow: 2px 2px 0 0 #9c7e44;
     }
-    @media (min-width: $md2+px) {
+    @media (min-width: $md3+px) {
       &:hover {
         background: #b6985d;
       }
@@ -51,7 +51,7 @@
     left: 2px;
     box-shadow: 2px 2px 0 0 #9c7e44;
   }
-  @media (min-width: $md2+px) {
+  @media (min-width: $md3+px) {
     &:hover {
       background: #b6985d;
     }
