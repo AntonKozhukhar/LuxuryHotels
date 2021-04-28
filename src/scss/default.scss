@@ -10,15 +10,23 @@
     border-radius: 15px;
     background: #e0b973;
     font-weight: bold;
-    transition: 0.5s;
+    transition: 0.3s;
     display: inline-flex;
     position: relative;
     color: #fff;
     padding: 25px 33px;
     @include adaptive-font(20, 16);
+    box-shadow: 4px 4px 0 0 #9c7e44;
+    top: 0;
+    left: 0;
+    &:active {
+      top: 2px;
+      left: 2px;
+      box-shadow: 2px 2px 0 0 #9c7e44;
+    }
     @media (min-width: $md2+px) {
       &:hover {
-        background: #9c7e44;
+        background: #b6985d;
       }
     }
     @media (max-width: $md4+px) {
@@ -30,13 +38,22 @@
   padding: 20px 65px;
   background: #e0b973;
   border-radius: 15px;
-  transition: 0.5s;
+  transition: 0.3s;
   color: #fff;
   font-weight: bold;
   @include adaptive-font(20, 15);
+  box-shadow: 4px 4px 0 0 #9c7e44;
+  position: relative;
+  top: 0;
+  left: 0;
+  &:active {
+    top: 2px;
+    left: 2px;
+    box-shadow: 2px 2px 0 0 #9c7e44;
+  }
   @media (min-width: $md2+px) {
     &:hover {
-      background: #9c7e44;
+      background: #b6985d;
     }
   }
 }
@@ -123,7 +140,7 @@
 }
 .swiper-pagination {
   padding-bottom: 15px;
-  @media (max-width:$md4+px){
+  @media (max-width: $md4+px) {
     padding-bottom: 10px;
   }
   &-bullet {
@@ -131,7 +148,7 @@
     height: 15px;
     background-color: #fff;
     border: 1px solid #fff;
-    @media (max-width:$md4+px){
+    @media (max-width: $md4+px) {
       width: 12px;
       height: 12px;
     }
@@ -139,14 +156,14 @@
 }
 
 .error-message {
-    color: red;
-    font-size: 18px;
-    position: absolute;
-    top: 60px;
-    left: 18px;
-    font-weight: normal;
-    display: none;
-    &._active {
-      display: block;
-    }
+  color: red;
+  font-size: 18px;
+  position: absolute;
+  top: 60px;
+  left: 18px;
+  font-weight: normal;
+  display: none;
+  &._active {
+    display: block;
   }
+}

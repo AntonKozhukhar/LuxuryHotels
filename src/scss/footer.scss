@@ -21,6 +21,7 @@
   a {
     color: #fff;
     transition: .3s;
+    cursor: pointer;
     &::before{
       transition: .3s;
       padding-right: 30px;

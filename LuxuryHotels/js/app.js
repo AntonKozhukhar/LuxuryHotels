@@ -11,7 +11,8 @@ for (let i = 0; i < menuLinks.length; i++) {
 let burger = document.querySelector('.header__burger');
 let menu = document.querySelector('.header__list');
 
-burger.addEventListener('click', function () {
+burger.addEventListener('click', function (e) {
+  e.stopPropagation();
 	let active = burger.classList.toggle('_active');
 	if (active) {
 		document.body.style.overflow = 'hidden';
@@ -71,13 +72,23 @@ for (let i = 0; i < details.length; i++) {
 	const dropdown = dropdowns[i];
 
   btn.addEventListener('click', function() {
-    btn.classList.toggle('_active');
-    dropdown.classList.toggle('_active');
+    btn.classList.toggle('_show');
+    dropdown.classList.toggle('_show');
   });
 
 	if (isActive(btn)) {
 		window.addEventListener('click', removeDropdown(btn, dropdown));
 	}
+}
+if (location.pathname.includes('/rooms.html')) {
+  document.addEventListener("click", function (e) {
+    const activeButtons = document.querySelectorAll('._show');
+    if(!e.target.classList.contains('rooms__details')) {
+      for (let i = 0; i < activeButtons.length; i++) {
+        removeActive(activeButtons[i]);
+      }
+    }
+  });
 }
 
 function removeDropdown(element1, element2) {
@@ -85,10 +96,10 @@ function removeDropdown(element1, element2) {
   removeActive(element2);
 }
 function isActive(element) {
-	return element.classList.contains('_active');
+	return element.classList.contains('_show');
 }
 function removeActive(element) {
-	element.classList.remove('_active');
+	element.classList.remove('_show');
 }
 
 //Validation
@@ -98,12 +109,13 @@ const formReq = document.querySelectorAll('._input');
 isInputsEmpty(formReq);
 
 function isInputsEmpty(arr) {
-	for (let i = 0; i < arr.length; i++) {
-		arr[i].addEventListener('blur', function () {
-			if (arr[i].value != '') {
-				arr[i].classList.add('_active');
+  for (let i = 0; i < arr.length; i++) {
+    const input = arr[i];
+    input.addEventListener('blur', function () {
+			if (input.value != '') {
+				input.classList.add('_active');
 			} else {
-				arr[i].classList.remove('_active');
+				input.classList.remove('_active');
 			}
 		});
 	}

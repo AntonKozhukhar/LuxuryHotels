@@ -105,7 +105,7 @@
               top: -3px;
             }
         }
-        &._active {
+        &._show {
           &::before {
             content: "";
           }
@@ -156,7 +156,7 @@
           background:#ebe0ce;
         }
       }
-      &._active {
+      &._show {
         display: block;
       }
     }
