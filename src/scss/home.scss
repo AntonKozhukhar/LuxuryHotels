@@ -15,8 +15,9 @@
   }
   &__row {
     display: flex;
-    margin: 0 -50px 70px -50px;
+    margin-bottom: 70px;
     align-items: center;
+    justify-content: space-between;
     
     &:last-child {
       margin-bottom: 0;
@@ -33,6 +34,9 @@
     @media (max-width: $md3+px) {
       order: 2;
     }
+    @media (max-width:$md4+px){
+      padding: 0;
+    }
     &::before {
       content: "";
       position: absolute;
@@ -40,6 +44,9 @@
       top: 15px;
       height: 95%;
       left: -10px;
+      @media (max-width:$md3+px){
+        border: none;
+      }
     }
     h2 {
       margin-bottom: 20px;
@@ -55,16 +62,16 @@
   }
   &__img {
     flex: 0 0 60%;
-    padding: 0 50px;
+    position: relative;
+    overflow: hidden;
     @media (max-width:$md2+px){
       margin-bottom: 15px;
     }
     img {
       width: 100%;
       height: 100%;
-      cursor: pointer;
       transition: .3s;
-      @media (min-width:$md2+px){
+      @media (min-width:$md3+px){
         &:hover {
           transform: scale(1.2);
         }

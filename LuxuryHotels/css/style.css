@@ -648,6 +648,7 @@ body {
   color: #fff;
   text-align: center;
   padding-bottom: 90px;
+  cursor: pointer;
 }
 
 .luxury__scroll a {
@@ -697,10 +698,13 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 -50px 70px -50px;
+  margin-bottom: 70px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .paradise__row:last-child {
@@ -740,13 +744,13 @@ body {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 60%;
           flex: 0 0 60%;
-  padding: 0 50px;
+  position: relative;
+  overflow: hidden;
 }
 
 .paradise__img img {
   width: 100%;
   height: 100%;
-  cursor: pointer;
   -webkit-transition: .3s;
   -o-transition: .3s;
   transition: .3s;
@@ -767,7 +771,7 @@ body {
   line-height: 30px;
 }
 
-.facilities__column {
+.facilities__block {
   font-weight: bold;
   font-size: 48px;
   line-height: 59px;
@@ -780,13 +784,20 @@ body {
   margin: 0 -15px;
 }
 
-.facilities__img {
-  position: relative;
+.facilities__column {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 50%;
           flex: 0 1 50%;
   padding: 0 15px;
   margin-bottom: 30px;
+}
+
+.facilities__img {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
 }
 
 .facilities__img img {
@@ -795,7 +806,6 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 15px;
-  cursor: pointer;
   -webkit-transition: .3s;
   -o-transition: .3s;
   transition: .3s;
@@ -1127,19 +1137,13 @@ body {
   .header__link._active {
     text-decoration: underline;
   }
-}
 
-@media (min-width: 992px) {
   .footer a:hover {
     color: #e0b973;
   }
 
   .footer a:hover::before {
     color: #e0b973;
-  }
-
-  .footer__btn:hover {
-    background: #9c7e44;
   }
 
   .paradise__img img:hover {
@@ -1150,9 +1154,15 @@ body {
 
   .facilities__img img:hover {
     z-index: 10;
-    -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-            transform: scale(1.1);
+    -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
+@media (min-width: 992px) {
+  .footer__btn:hover {
+    background: #9c7e44;
   }
 
   .rooms__details-list li:hover {
@@ -1394,7 +1404,11 @@ body {
             order: 2;
   }
 
-  .facilities__column {
+  .paradise__text::before {
+    border: none;
+  }
+
+  .facilities__block {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -1469,6 +1483,10 @@ body {
 
   .paradise__breakfast {
     line-height: 30px;
+  }
+
+  .paradise__text {
+    padding: 0;
   }
 
   .rooms__label {

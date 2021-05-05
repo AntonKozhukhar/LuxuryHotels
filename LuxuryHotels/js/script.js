@@ -1,35 +1,17 @@
-//Webp
-
-function testWebP(callback) {
-	var webP = new Image();
-	webP.onload = webP.onerror = function () {
-		callback(webP.height == 2);
-	};
-	webP.src ='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
-}
-testWebP(function (support) {
-	if (support == true) {
-		document.querySelector('body').classList.add('_webp');
-	} else {
-		document.querySelector('body').classList.add('_no-webp');
+//Active menu
+const menuLinks = document.querySelectorAll('.header__link');
+menuLinks.forEach((element) => {
+  if (document.location.href === element.href) {
+		element.classList.add('_active');
 	}
 });
 
-//Active menu
-let menuLinks = document.querySelectorAll('.header__link');
-
-for (let i = 0; i < menuLinks.length; i++) {
-	if (document.location.href === menuLinks[i].href) {
-		menuLinks[i].classList.add('_active');
-	}
-}
 
 //Burger-menu
-let burger = document.querySelector('.header__burger');
-let menu = document.querySelector('.header__list');
+const burger = document.querySelector('.header__burger');
+const menu = document.querySelector('.header__list');
 
-burger.addEventListener('click', function (e) {
-	e.stopPropagation();
+burger.addEventListener('click', function () {
 	let active = burger.classList.toggle('_active');
 	if (active) {
 		document.body.style.overflow = 'hidden';
@@ -41,13 +23,8 @@ burger.addEventListener('click', function (e) {
 });
 
 //Srcoll
-if (
-	location.pathname.includes('/index.html') ||
-	location.pathname.includes('/facilities.html') ||
-	location.pathname.includes('/rooms.html')
-) {
-	let scroll = document.querySelector('.luxury__scroll-btn[data-goto]');
-
+const scroll = document.querySelector('.luxury__scroll-btn[data-goto]');
+if (scroll) {
 	scroll.addEventListener('click', function (e) {
 		let btn = e.target;
 		if (btn.dataset.goto && document.querySelector(btn.dataset.goto)) {
@@ -84,9 +61,8 @@ new Swiper('.rooms__slider', {
 const details = document.querySelectorAll('.rooms__details');
 const dropdowns = document.querySelectorAll('.rooms__details-list');
 
-for (let i = 0; i < details.length; i++) {
-	const btn = details[i];
-	const dropdown = dropdowns[i];
+details.forEach((btn, i) => {
+  const dropdown = dropdowns[i];
 
 	btn.addEventListener('click', function () {
 		btn.classList.toggle('_show');
@@ -96,14 +72,13 @@ for (let i = 0; i < details.length; i++) {
 	if (isActive(btn)) {
 		window.addEventListener('click', removeDropdown(btn, dropdown));
 	}
-}
-if (location.pathname.includes('/rooms.html')) {
+})
+
+if (details) {
 	document.addEventListener('click', function (e) {
-		const activeButtons = document.querySelectorAll('._show');
-		if (!e.target.classList.contains('rooms__details')) {
-			for (let i = 0; i < activeButtons.length; i++) {
-				removeActive(activeButtons[i]);
-			}
+		const activeElements = document.querySelectorAll('._show');
+    if (!e.target.classList.contains('rooms__details')) {
+      activeElements.forEach(activeEl => removeActive(activeEl));
 		}
 	});
 }
@@ -126,19 +101,18 @@ const formReq = document.querySelectorAll('._input');
 isInputsEmpty(formReq);
 
 function isInputsEmpty(arr) {
-	for (let i = 0; i < arr.length; i++) {
-		const input = arr[i];
-		input.addEventListener('blur', function () {
+  arr.forEach((input) => {
+    input.addEventListener('blur', function () {
 			if (input.value != '') {
 				input.classList.add('_active');
 			} else {
 				input.classList.remove('_active');
 			}
 		});
-	}
+  })
 }
 
-const regEmail = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;
+const regEmail = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
 
 const footerForm = document.forms.footerForm;
 const footerInput = footerForm.elements.footerInput;
@@ -162,7 +136,7 @@ footerForm.addEventListener('submit', function (e) {
 	}
 });
 
-if (location.pathname.includes('/contact-us.html')) {
+if (form) {
 	form.addEventListener('submit', formSend);
 
 	function formSend(e) {
@@ -174,28 +148,28 @@ function formValidate() {
 	const errorMessages = document.querySelectorAll('._message');
 	const errorEmail = document.querySelector('._message-email');
 
-	removeErrorMessage(errorEmail);
+  removeErrorMessage(errorEmail);
+  
+  formReq.forEach((input, i) => {
+    const message = errorMessages[i];
 
-	for (let i = 0; i < formReq.length; i++) {
-		const input = formReq[i];
-		const message = errorMessages[i];
+    formRemoveError(input);
+    removeErrorMessage(message);
 
-		formRemoveError(input);
-		removeErrorMessage(message);
-
-		if (input.name === 'email' && input.value != '') {
-			if (emailTest(input)) {
-				formAddError(input);
-				addErrorMessage(errorEmail);
-			}
-		} else {
-			if (input.value === '') {
-				formAddError(input);
-				addErrorMessage(message);
-			}
-		}
-	}
+    if (input.name === 'email' && input.value != '') {
+      if (emailTest(input)) {
+        formAddError(input);
+        addErrorMessage(errorEmail);
+      }
+    } else {
+      if (input.value === '') {
+        formAddError(input);
+        addErrorMessage(message);
+      }
+    }
+  });
 }
+
 function formAddError(input) {
 	input.classList.add('_error');
 }
@@ -212,3 +186,21 @@ function addErrorMessage(message) {
 function removeErrorMessage(message) {
 	message.classList.remove('_active');
 }
+
+//Webp
+
+function testWebP(callback) {
+	let webP = new Image();
+	webP.onload = webP.onerror = function () {
+		callback(webP.height == 2);
+	};
+	webP.src =
+		'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
+}
+testWebP(function (support) {
+	if (support == true) {
+		document.querySelector('body').classList.add('_webp');
+	} else {
+		document.querySelector('body').classList.add('_no-webp');
+	}
+});
